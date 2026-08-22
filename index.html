@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayflow - HRMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5',
+                        'primary-hover': '#4338CA',
+                        secondary: '#14B8A6',
+                        background: '#F8F7FF',
+                        card: '#FFFFFF',
+                        navy: '#172033',
+                        slate: '#64748B',
+                        border: '#E2E8F0',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F7FF; color: #172033; margin: 0; padding: 0; overflow-x: hidden; }
+        .hidden { display: none !important; }
+        
+        /* Micro-animations */
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        .slide-up { animation: slideUp 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Buttons */
+        .btn { transition: all 0.2s ease; }
+        .btn:hover { transform: scale(1.01); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .btn:active { transform: scale(0.98); }
+        
+        /* Cards */
+        .card { border-radius: 12px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); background-color: white; border: 1px solid #E2E8F0; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.2s ease; }
+
+        /* Sidebar active */
+        .sidebar-active { background-color: #EEECFF; color: #4F46E5; }
+        .sidebar-active svg { color: #4F46E5; }
+        
+        /* Layout */
+        .app-container { display: flex; height: 100vh; overflow: hidden; }
+        .sidebar { width: 250px; flex-shrink: 0; background: white; border-right: 1px solid #E2E8F0; display: flex; flex-direction: column; }
+        .main-content { flex-grow: 1; overflow-y: auto; padding: 2rem; }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="app.js"></script>
+</body>
+</html>
